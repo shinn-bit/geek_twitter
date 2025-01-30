@@ -15,10 +15,13 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Login')
 
 class PostForm(FlaskForm):
-    title = StringField('Title', validators=[DataRequired(), Length(max=100)])
-    content = TextAreaField('Content', validators=[DataRequired()])
-    submit = SubmitField('Post')
+    title = StringField('タイトル', validators=[DataRequired()])
+    content = TextAreaField('内容', validators=[DataRequired()])
+    submit = SubmitField('投稿する')
 
 class SearchForm(FlaskForm):
-    query = StringField('Search', validators=[DataRequired()])
-    submit = SubmitField('Search')
+    query = StringField('検索', validators=[DataRequired()])
+    submit = SubmitField('検索する')
+
+class DeleteForm(FlaskForm):
+    submit = SubmitField('削除')
